@@ -5,7 +5,7 @@ export async function calculateFluid(
     data: PatientFormDataT
 ): Promise<FluidResultDataT> {
     const res = await fetch(
-        "http://api-nutritilator.vercel.app/fluid/calculate",
+        "https://api-nutritilator.vercel.app/fluid/calculate",
         {
             method: "POST",
             headers: { "Content-Type": "application/json" },

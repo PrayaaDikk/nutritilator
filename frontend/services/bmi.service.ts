@@ -5,7 +5,7 @@ export async function calculateBmi(
     data: PatientFormDataT
 ): Promise<BmiResultDataT> {
     const res = await fetch(
-        "http://api-nutritilator.vercel.app/bmi/calculate",
+        "https://api-nutritilator.vercel.app/bmi/calculate",
         {
             method: "POST",
             headers: { "Content-Type": "application/json" },
