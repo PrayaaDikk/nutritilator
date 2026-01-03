@@ -6,13 +6,14 @@ from app.routes import energy
 
 app = FastAPI()
 
-# IZINKAN NEXTJS MENGAKSES BACKEND
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://nutritilator.vercel.app"],  # nanti bisa ganti domain Next.js
+    allow_origins=["https://nutritilator.vercel.app"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 app.include_router(bmi.router)
 app.include_router(fluid.router)
