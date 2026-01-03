@@ -9,7 +9,7 @@ app = FastAPI()
 # IZINKAN NEXTJS MENGAKSES BACKEND
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # nanti bisa ganti domain Next.js
+    allow_origins=["https://nutritilator.vercel.app"],  # nanti bisa ganti domain Next.js
     allow_methods=["*"],
     allow_headers=["*"],
 )
