@@ -1,18 +1,10 @@
 "use client";
-import BmiResult from "@/components/bmi/BmiResult";
-import BmiSection from "@/components/bmi/BmiSection";
 import PatientForm from "@/components/PatientForm";
 import { usePatientCalculation } from "@/hooks/usePatientCalculation";
 
 export default function Home() {
-    const {
-        calculateAll,
-        bmiResult,
-        fluidResult,
-        energyResult,
-        loading,
-        error,
-    } = usePatientCalculation();
+    const { calculateAll, fluidResult, energyResult, loading } =
+        usePatientCalculation();
 
     return (
         <>
@@ -25,7 +17,6 @@ export default function Home() {
             <div className="p-6">
                 <PatientForm onSubmit={calculateAll} loading={loading} />
 
-                {bmiResult ? <BmiSection result={bmiResult} /> : ""}
                 <div className="space-y-1 mt-6">
                     {energyResult && (
                         <h3 className="">
