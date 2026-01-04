@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
 from app.core.cors import setup_cors
-from app.core.config import ENVIRONMENT
+from app.core.config import CORS_ORIGINS, ENVIRONMENT
 from app.routes import bmi, fluid, energy
 
 app = FastAPI()
@@ -19,3 +19,6 @@ async def health():
         "status": "ok",
         "environment": ENVIRONMENT,
     }
+
+print("ENV:", ENVIRONMENT)
+print("CORS:", CORS_ORIGINS)
