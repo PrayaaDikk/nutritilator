@@ -1,16 +1,13 @@
 import os
 from typing import List
-from dotenv import load_dotenv
-
-load_dotenv()  # <<< INI KUNCI UTAMANYA
 
 def get_env(key: str, default: str = "") -> str:
-    return os.getenv(key, default)
-
-ENVIRONMENT: str = get_env("ENVIRONMENT", "development")
+    return os.environ.get(key, default)
 
 CORS_ORIGINS: List[str] = [
-    origin.strip()
-    for origin in get_env("CORS_ORIGINS").split(",")
-    if origin.strip()
+    o.strip()
+    for o in get_env("CORS_ORIGINS").split(",")
+    if o.strip()
 ]
+
+ENVIRONMENT = get_env("ENVIRONMENT", "development")
